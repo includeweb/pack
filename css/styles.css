@@ -36,13 +36,31 @@
   background-size: cover;
 }
 
+.black {
+  background-color: #000;
+  height: 20px;
+}
+
+.logo-header {
+  background-color: #282624;
+  padding: 15px 0;
+}
+
 .amarillo{
 	background-color: #FCED18;
 	height: 500px;
 	opacity: 0.8;
 	
 }
+
 .navbar-default{
+  background-color: #373534;
+  border:none;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.home .navbar-default{
 	background-color: transparent;
 	border:none;
 	margin-top: 150px;
@@ -50,14 +68,25 @@
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-    color: #555;
-   	border-bottom: 4px solid #FCED18;
-   	background-color: transparent;
+  color: #555;
+ 	border-bottom: 4px solid #FCED18;
+ 	background-color: transparent;
+}
+
+.navbar-nav {
+  margin-left: -30px;
 }
 
 .navbar-nav li a{
-	color:#939597;
-	font-size:22px;
-	font-family: 'ropa_sansitalic';
-	text-transform: uppercase;
+  color:#939597;
+  font-size:22px;
+  font-family: 'ropa_sansitalic';
+  text-transform: uppercase;
+  margin: 0 15px;
+  padding: 15px 0;
+}
+
+.home .navbar-nav li a{
+  padding: 15px 15px;
+  margin: 0;
 }
