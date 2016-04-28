@@ -91,6 +91,7 @@
   background: url(../images/trama.jpg);
 }
 
+
 .home{ 
   background: url(../images/home-background.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -133,10 +134,17 @@
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-  color: #555;
- 	border-bottom: 4px solid #FCED18;
- 	background-color: transparent;
+  color: #FCED18;
+  border-bottom: 4px solid #FCED18;
+  background-color: transparent;
 }
+
+.home .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  color: #555;
+  border-bottom: 4px solid #FCED18;
+  background-color: transparent;
+}
+
 
 .navbar-nav {
   margin-left: -30px;
@@ -172,7 +180,7 @@
 #team {
   font-family: 'ropa_sansregular';
   font-size: 1.7em;
-  color: #fff;
+  color: rgb(237, 237, 237);
 }
 
 #team .team-photo > div {

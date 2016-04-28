@@ -6,7 +6,22 @@
 	.amarillo{
 		height: auto;
 	}
+
+	.site .navbar-nav li > a {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
 }
-@media(min-width:768px){}
+@media(min-width:768px){
+	.padding30 {
+	  padding-left: 30px;
+	  padding-right: 30px;
+	}
+
+	.padding15 {
+		padding-left: 15px;
+	  padding-right: 15px;
+	}
+}
 @media(min-width:992px){}
 @media(min-width:1200px){}
