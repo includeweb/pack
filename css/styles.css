@@ -89,6 +89,13 @@
 
 .site {
   background: url(../images/trama.jpg);
+  display: table;
+  width: 100%;
+}
+
+.site > div {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 
