@@ -118,11 +118,21 @@
 }
 
 .amarillo{
-	background-color: rgba(252,237,24,0.8);
+  /*background-color: rgba(252,237,24,0.8);*/
+	background-color: rgba(251, 240, 84, 0.8);
 	height: 500px;
-	padding:80px 50px;
+	padding:0 50px;
   display: table;
   width: 100%;
+}
+
+.amarillo > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.amarillo img {
+  max-width: 55%;
 }
 
 
