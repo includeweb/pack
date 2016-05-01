@@ -160,7 +160,7 @@
 .navbar-nav li a{
 
 	color:#939597;
-	font-size:22px;
+	font-size:1.3em;
 	font-family: 'ropa_sansitalic';
 	text-transform: uppercase;
 }
@@ -186,7 +186,7 @@
 
 #team {
   font-family: 'ropa_sansregular';
-  font-size: 1.7em;
+  font-size: 1.4em;
   color: rgb(237, 237, 237);
 }
 
@@ -196,6 +196,11 @@
 
 #team .team-photo img {
   width: 100%;
+}
+
+#team .padding45 {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #somos-text {
@@ -220,7 +225,7 @@
 
 #somos-text .col-md-5 span {
   font-family: 'ropa_sansregular';
-  font-size: 1.3em;
+  font-size: 1em;
   line-height: 0.9em;
 }
 
