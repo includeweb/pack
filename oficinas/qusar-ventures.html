@@ -8,14 +8,14 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/isotope.pkgd.min.js"></script>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
     <meta name="description" content="<%meta_description%>">
     <meta name="keywords" content="<%meta_keywords%>">
     <meta name="robots" content="<%meta_robots%>">
@@ -86,7 +86,7 @@
 
     </script>
 </head>
-<body class="site">
+<body class="site interna">
   <div>
     <header class="container">
       <div class="row black"></div>
@@ -127,115 +127,52 @@
     </header>
     <div class="container">
       <div class="row">
-        <div id="filters">  
-          <button class="button is-checked" data-filter="*">todo</button>
-          <button class="button" data-filter=".oficinas">oficinas</button>
-          <button class="button" data-filter=".viviendas">viviendas</button>
-        </div>
+      	<div class="col-md-6 noPadding">
+      		<div id="filters">  
+	          <button class="button is-checked" data-filter="*">todo</button>
+	          <button class="button" data-filter=".oficinas">oficinas</button>
+	          <button class="button" data-filter=".viviendas">viviendas</button>
+	        </div>
+      	</div>
+      	<div class="col-md-6"></div>
+        
       </div>
-      <div class="row grid">
-        <a href="oficinas/qusar-ventures.html">
-        <div class="grid-item 1 oficinas" data-item="1">
-          <div class="box animated item-1">
-            <div class="circle"></div>
-            <div class="box-text">QUASAR<br>VENTURES</div>
-          </div>
-          <img src="images/hacemos/quasar_ventures_mini.jpg" class="img-responsive" />
-        </div>
-        </a>
-        <div class="grid-item" data-item="2">
-          <div class="box animated item-2">
-            <div class="circle"></div>
-            <div class="box-text">PUENTE<br>HERMANOS<br>ETAPA 1</div>
-          </div>
-          <img src="images/hacemos/puente_hermanos_mini.jpg" class="img-responsive" />
-        </div>
-        <div class="grid-item violeta" data-item="3">
-          <div class="box animated item-3">
-            <div class="circle"></div>
-            <div class="box-text">PUENTE<br>HERMANOS<br>ETAPA 2</div>
-          </div>
-          
-        </div>
-        <div class="grid-item verde" data-item="4">
-          <div class="box animated item-4">
-            <div class="circle"></div>
-            <div class="box-text">BISTRÓ<br>S.A.</div>
-          </div>
-          
-        </div>
-        <div class="grid-item " data-item="5">
-          <div class="box animated item-5">
-            <div class="circle"></div>
-            <div class="box-text">CASCBA</div>
-          </div>
-          <img src="images/hacemos/cascba_mini.jpg" class="img-responsive" />
-        </div>
-        <div class="grid-item " data-item="6">
-          <div class="box animated item-6">
-            <div class="circle"></div>
-            <div class="box-text">CASINO<br>CLUB</div>
-          </div>
-          <img src="images/hacemos/casino_club_mini.jpg" class="img-responsive" />
-        </div>
-        <div class="grid-item " data-item="7">
-          <div class="box animated item-7">
-            <div class="circle"></div>
-            <div class="box-text">EDELMAN</div>
-          </div>
-          <img src="images/hacemos/edelman_mini.jpg" class="img-responsive" />
-        </div>
-         <div class="grid-item verde2" data-item="8">
-          <div class="box animated item-8">
-            <div class="circle"></div>
-            <div class="box-text">AVAL<br>FEDERAL</div>
-          </div>
-          
-        </div>
+      <div class="row">
+      	<div class="col-md-6 col-sm-6 interna-img noPadding"><img src="../images/hacemos/quasar-principal.jpg" class="img-responsive"></div>
+      	<div class="col-md-6 col-sm-6 interna-content">
+      		<div class="align-content">
+      		<h2>QUASAR<br>VENTURES</h2>
+      		<h3>NUEVAS OFICINAS</h3>
+	      		<p>
+	      			<strong>UBICACIÓN:</strong> Av. Libertador 6810 - Piso 16, Nuñez<br>
+					<strong>AÑO DE EJECUCIÓN:</strong> 2014<br>
+					<strong>ACTIVIDAD:</strong> Company builder<br>
+					<strong>SUPERFICIE:</strong> 210 m2<br>
+					<strong>TIEMPO DE OBRA:</strong> 60 días<br>
+					<strong>PUESTOS DE TRABAJO: 22</strong>
+
+	      		</p>
+      		</div>
+      		<div class="row actions">
+      			<div class="col-md-12 text-right">
+      				<a href="../hacemos.html"><img src="../images/portfolio-icon.png" width="40" style="margin-right:10px;" /></a>
+      				<a href=""><img src="../images/back-icon.png" width="40"/></a>
+      			</div>
+      		</div>
+      	</div>
       </div>
-     <!-- <div class="row grid">
-        <div class="grid-item item-">
-          <div class="grid-animated animated">
-            <div class="opacity-b"></div>
-            <div class="box">
-              <div class="cuadro">test<br>test</div>
-            </div>
-          </div>
-          <img src="images/hacemos/quasar_ventures_mini.jpg" class="img-responsive" />
-        </div>
-        <div class="grid-item item-2">
-          <div class="opacity-b"></div>
-          <div class="box">
-            <div class="cuadro">test<br>test</div>
-          </div>
-          <img src="images/hacemos/puente_hermanos_mini.jpg" class="img-responsive" />
-        </div>
-        <div class="grid-item  item-3">
-          <div class="opacity box">
-            <div class="grid-item-box">
-              
-            </div>
-          </div>
-        </div> 
-        <div class="grid-item  item-4">
-          <div class="opacity box">
-            <div class="grid-item-box">
-              
-            </div>
-          </div>
-        </div>
-      </div>-->
+     
      
     </div>
     <footer class="container">
       <div class="row">
         <div class="social col-md-12 padding45">
           <ul>
-            <li><a href="" title="Facebook" target="_blank"a><img src="images/facebook-icon.png" /></a></li>
-            <li><a href="" title="Twitter" target="_blank"a><img src="images/twitter-icon.png" /></a></li>
-            <li><a href="" title="Pinterest" target="_blank"a><img src="images/pinterest-icon.png" /></a></li>
-            <li><a href="" title="LinkedIn" target="_blank"a><img src="images/linkedin-icon.png" /></a></li>
-            <li><a href="" title="Google+" target="_blank"a><img src="images/google-icon.png" /></a></li>
+            <li><a href="" title="Facebook" target="_blank"a><img src="../images/facebook-icon.png" /></a></li>
+            <li><a href="" title="Twitter" target="_blank"a><img src="../images/twitter-icon.png" /></a></li>
+            <li><a href="" title="Pinterest" target="_blank"a><img src="../images/pinterest-icon.png" /></a></li>
+            <li><a href="" title="LinkedIn" target="_blank"a><img src="../images/linkedin-icon.png" /></a></li>
+            <li><a href="" title="Google+" target="_blank"a><img src="../images/google-icon.png" /></a></li>
           </ul>
         </div> 
       </div>

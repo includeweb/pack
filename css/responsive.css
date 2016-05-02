@@ -11,8 +11,18 @@
 		padding-right: 30px;
 		padding-left: 30px;
 	}
+	#filters{
+	  background-color: rgba(255,254,0,0.5);
+	  padding:10px;
+	  
+	}
+	.grid-item{
+	  width: 50%;
+	}
+
 }
 @media(min-width:768px){
+
 	.padding45 {
 	  padding-left: 45px;
 	  padding-right: 45px;
