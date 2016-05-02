@@ -19,10 +19,22 @@
 	.grid-item{
 	  width: 50%;
 	}
+	.interna-content{
+	  padding:0 15px;
+	}
+	.interna-img{
+	  height: 300px;
+	}
 
 }
 @media(min-width:768px){
+.interna h2{
+	  font-size: 30px;
 
+	}
+	.interna h3{
+	  font-size: 20px;
+	}
 	.padding45 {
 	  padding-left: 45px;
 	  padding-right: 45px;
@@ -64,5 +76,13 @@
 		padding-right: 15px;
 	}
 }
-@media(min-width:992px){}
+@media(min-width:992px){
+	.interna h2{
+	  font-size: 60px;
+
+	}
+	.interna h3{
+	  font-size: 24px;
+	}
+}
 @media(min-width:1200px){}

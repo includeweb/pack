@@ -319,7 +319,7 @@
 
 /*internas*/
 .interna-img{
-  
+  height: 490px;
   overflow: hidden;
   
 }
@@ -331,6 +331,7 @@
   background-color: #1E1A1C;
   padding:0 60px;
   display:block;
+  height: 490px;
 }
 .align-content{
   display:table-cell;
