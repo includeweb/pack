@@ -425,3 +425,7 @@ min-height: 494px;
 .logo h2, .logo h3{
   display: none;
 }
+
+.subtitle{
+  margin-top: 0!important;
+}
