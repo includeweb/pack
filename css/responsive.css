@@ -25,6 +25,22 @@
 	.interna-img{
 	  height: 300px;
 	}
+	.texto {
+		width: 100%!important;
+		margin-top: 0px!important;
+		padding-bottom: 40px;
+	}
+
+}
+@media(max-width:420px){
+	.grid-item{
+		width: 100%;
+	}
+	.texto {
+		width: 100%!important;
+		margin-top: 0px!important;
+		padding-bottom: 40px;
+	}
 
 }
 @media(min-width:768px){

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Pack Arquitectura</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,9 +28,18 @@
 
     <script type="text/javascript" defer>
       $(document).ready(function() {
-        
-        
-
+        $('.load').fadeIn('slow');
+         $('.logo-title h3').addClass('fadeInLeft').fadeIn('slow');
+            setTimeout(function(){
+              $('.logo-title h2').addClass('fadeInLeft').fadeIn('slow');
+            }, 500); 
+              
+            $('.section-change').click(function(){
+              $('.load').fadeIn();
+            });
+            $('.top').click(function(){
+              $('.load').fadeIn();
+            });
         setTimeout(function(){
           generatePortfolio();
         }, 100);       
@@ -49,6 +58,7 @@
       });
 
       function generatePortfolio(){
+        
         var height = $('.1').height();
         $('.violeta').height(height);
         $('.verde').height(height);
@@ -75,7 +85,12 @@
         };
 
         // bind filter button click
-        $('#filters').on( 'click', 'button', function() {
+        $('#filters').on( 'click', '.button', function() {
+
+          $('.load').fadeOut('slow');
+          
+
+
           var filterValue = $( this ).attr('data-filter');
           // use filterFn if matches value
           filterValue = filterFns[ filterValue ] || filterValue;
@@ -113,7 +128,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li><a href="index.html" class="section-change" data-section="inicio">inicio</a></li>
-                <li><a href="#" class="section-change" data-section="somos">somos</a></li>
+                <li><a href="somos.html" class="section-change" data-section="somos">somos</a></li>
                 <li class="active"><a href="#" class="section-change" >hacemos</a></li>
                 <li><a href="#" class="section-change" >estilo</a></li>
                 <li><a href="#" class="section-change" >contacto</a></li>
@@ -131,7 +146,25 @@
           <button class="button is-checked" data-filter="*">todo</button>
           <button class="button" data-filter=".oficinas">oficinas</button>
           <button class="button" data-filter=".viviendas">viviendas</button>
+          <button class="top" ><span class="glyphicon glyphicon-upload"></span></button>
         </div>
+      </div>
+      <div class="load">
+      <div class="row">
+        <div class="col-md-12 noPadding"><img src="images/hacemos/hacemos-bg.jpg" class="img-responsive" /></div>
+      </div>
+      <div class="row logo">
+        <div class="col-md-4 logo-title">
+          <h3 class="animated">hacemos</h3>
+          <h2 class="animated">Pack</h2>
+        </div>
+        <div class="col-md-8">
+          <div class="align-content texto ">
+            El valor de nuestro trabajo no esta en lo que decimos, sino en lo que 
+            hacemos. Nuestro trabajo incluye desde una asesoría en temas inmobiliarios, atravesando las distintas etapas de diseño y proyecto de arquitectura, diseño de interiores, space planning, proyecto ejecutivo, dirección de obra,ejecución y construcción de la obra, hasta la logística de la mudanza. 
+          </div>
+        </div>
+      </div>
       </div>
       <div class="row grid">
         <a href="oficinas/qusar-ventures.html">
