@@ -477,3 +477,34 @@ visibility: hidden;
 .subtitle{
   margin-top: 0!important;
 }
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+  font-size: 1em!important;
+}
+
+.carousel-control {
+  bottom: 40px;
+  top: auto;
+  
+}
+
+.carousel-control.right {
+  right: 0;
+  left: auto;
+}
+
+.carousel-control.left {
+  right: 70px;
+  left: auto;
+}
+
+.carousel-control.mid {
+  bottom: 25px;
+  right: 35px;
+  left: auto;
+  font-family: 'audimatregular';
+}
+
+.current {
+  color: #FFED00;
+}
