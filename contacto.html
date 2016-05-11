@@ -30,15 +30,22 @@
       $(document).ready(function() {
         //enviar el mail
         $('#enviar').click(function(){
-
+        if($("form")[0].checkValidity()) {
             var nombre = $('#nombre').val();
             var email = $('#email').val();
             var mensaje = $('#comentario').val();
             $.post("enviar-datos.php", { nombre: nombre, email: email, mensaje: mensaje }).success(function(){
+                $('.error').hide();
                 $('.form-success').fadeIn('slow');
                 $('.contact-content').slideToggle('slow');
             });
             $('.form-success').slideToggle('slow');
+             setTimeout(function(){
+                  $('.form-success').slideToggle('slow');
+                }, 2500);
+           }else{
+            $('.error').show();
+           }
         });
 
 
@@ -155,7 +162,7 @@
                 <li><a href="somos.html" class="section-change" data-section="somos">somos</a></li>
                 <li class="active"><a href="hacemos.html" class="section-change" >hacemos</a></li>
                 <li><a href="estilo.html" class="section-change" >estilo</a></li>
-                <li><a href="#" class="section-change" >contacto</a></li>
+                <li><a href="contacto.html" class="section-change" >contacto</a></li>
               </ul>
        
              
@@ -172,25 +179,28 @@
         <div class="col-md-4 col-sm-4 titulo-contacto padding45 animated"><span>Contacto</span><br /><span>PACK</span></div>
         <div class="col-md-8 col-sm-7 padding45 animated">
           <div class="contact-content">
+          <form>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                <label class="error">Este campo es requerido.</label>
               </div>
             </div>
             <div class="col-md-6">
                <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Email">
+                  <input type="text" class="form-control" id="email" placeholder="Email" required>
+                  <label class="error">Este campo es requerido.</label>
                 </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
             <label for="email">Comentario</label>
-              <textarea class="form-control" name="comentario" style="min-height:200px;"></textarea>
-              
+              <textarea class="form-control" name="comentario" style="min-height:200px;" required></textarea>
+              <label class="error">Este campo es requerido.</label>
             </div>
           </div>  
           <div class="row">
@@ -198,9 +208,9 @@
              <a class="btn btn-default" href="javascript:void(0);" id="enviar">Enviar</a>
             </div>
           </div> 
-          
+          </form>
          </div>
-         <div class="form-success">
+         <div class="form-success" style="display:none;">
            <h4>Recibimos sus datos correctamente.</h4>
          </div>         
       </div>

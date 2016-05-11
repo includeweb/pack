@@ -506,3 +506,20 @@ visibility: hidden;
   color: #FFED00;
   background-color: #373534;
 }
+
+.contact-content{
+  display: block;
+}
+.form-success{
+   border:1px solid #FFED00;
+   padding:15px;
+   text-align: center;
+   margin-top: 15px;
+}
+
+.error{
+  display: none;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: normal;
+}
