@@ -553,3 +553,7 @@ visibility: hidden;
   font-style: italic;
   font-weight: normal;
 }
+
+.logo-nav {
+  max-width: 120px;
+}
