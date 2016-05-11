@@ -12,6 +12,7 @@
     <script src="../js/isotope.pkgd.min.js"></script>
 
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/owl.carousel.css">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
     <link href="../css/animate.css" rel="stylesheet">
@@ -26,8 +27,15 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="../js/owl.carousel.min.js"></script>
+
     <script type="text/javascript" defer>
       $(document).ready(function() {
+
+        $(".owl-carousel").owlCarousel({
+          items: 1,
+          nav: true
+        });
         
         $('.button').click(function(){
           window.location.href = '../hacemos.html';
@@ -62,7 +70,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand hidden-md hidden-lg" href="#">Brand</a>
+              <!-- <a class="navbar-brand hidden-md hidden-lg" href="#">Brand</a> -->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -83,7 +91,7 @@
     </header>
     <div class="container">
       <div class="row">
-      	<div class="col-md-6 noPadding">
+      	<div class="col-md-12 noPadding">
       		<div id="filters">  
 	          <button class="button">todo</button>
 	          <button class="button">oficinas</button>
@@ -94,19 +102,22 @@
         
       </div>
       <div class="row">
-      	<div class="col-md-6 col-sm-6 interna-img noPadding"><img src="../images/hacemos/quasar-principal.jpg" class="img-responsive"></div>
+      	<div class="col-md-6 col-sm-6 interna-img noPadding owl-carousel"><div><img src="../images/hacemos/quasar-principal.jpg" class="img-responsive"></div>
+        <div><img src="../images/hacemos/quasar-principal.jpg" class="img-responsive"></div>
+        <div><img src="../images/hacemos/quasar-principal.jpg" class="img-responsive"></div>
+        <div><img src="../images/hacemos/quasar-principal.jpg" class="img-responsive"></div></div>
       	<div class="col-md-6 col-sm-6 interna-content">
       		<div class="align-content">
       		<h2>CASCBA</h2>
           <p class="subtitle">Cámara Argentina de Salas de Casinos, Bingos y Afines</p>
       		<h3>NUEVAS OFICINAS</h3>
 	      		<p>
-	      			<strong>UBICACIÓN:</strong> Olazabal 1515 - Piso 9, Belgrano<br>
-					<strong>AÑO DE EJECUCIÓN:</strong> 2014<br>
-					<strong>ACTIVIDAD:</strong> Cámara de Casinos<br>
-					<strong>SUPERFICIE:</strong> 150 m2<br>
-					<strong>TIEMPO DE OBRA:</strong> 90 días<br>
-					<strong>PUESTOS DE TRABAJO:</strong> xxxxx
+	      			<span>UBICACIÓN:</span> Olazabal 1515 - Piso 9, Belgrano<br>
+					<span>AÑO DE EJECUCIÓN:</span> 2014<br>
+					<span>ACTIVIDAD:</span> Cámara de Casinos<br>
+					<span>SUPERFICIE:</span> 150 m2<br>
+					<span>TIEMPO DE OBRA:</span> 90 días<br>
+					<span>PUESTOS DE TRABAJO:</span> xxxxx
 
 	      		</p>
       		</div>

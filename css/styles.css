@@ -220,29 +220,58 @@
   padding-bottom: 5px;
 }
 
-#somos-text {
-  background-color: #FFED00;
-  color: #4A4949;
+#somos-text,
+#estilo-text,
+#hacemos-text {
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-#somos-text .col-md-4 span:first-child {
+#somos-text {
+  background-color: #FFED00;
+  color: #4A4949;
+}
+
+#estilo-text,
+#hacemos-text {
+  background-color: #373534;
+  color: #FFFFFF;
+}
+
+#somos-text .col-md-4 span:first-child,
+#estilo-text .col-md-4 span:first-child,
+#hacemos-text .col-md-4 span:first-child {
   font-family: 'ropa_sansitalic';
   font-size: 3.5em;
   line-height: 0.7em;
 }
 
-#somos-text .col-md-4 span:last-child {
+#somos-text .col-md-4 span:last-child,
+#estilo-text .col-md-4 span:last-child,
+#hacemos-text .col-md-4 span:last-child {
   font-family: 'audimatregular';
   font-size: 11.5em;
   line-height: 0.7em;
   margin-left: -11px;
 }
 
-#somos-text .col-md-5 span {
-  font-family: 'ropa_sansregular';
-  font-size: 1em;
+#estilo-text .col-md-4 span:last-child,
+#hacemos-text .col-md-4 span:last-child {
+  color: #FFED00;
+}
+
+#somos-text .col-md-5,
+#estilo-text .col-md-5,
+#hacemos-text .col-md-5 {
+  font-family: 'ropa_sansregular', Arial;
+    padding-top: 30px;
+}
+
+#somos-text .col-md-5 span,
+#estilo-text .col-md-5 span,
+#hacemos-text .col-md-5 span {
+  font-family: 'ropa_sansregular', Arial;
+  font-size: 0.9em;
   line-height: 0.9em;
 }
 
@@ -263,7 +292,8 @@
   font-size: 1.3em;
   font-family: 'ropa_sansitalic';
   text-transform: uppercase;
-   outline-width: 0;
+  outline-width: 0;
+  padding: 1px 15px;
 
 
 }
@@ -283,6 +313,7 @@
 }
 .grid{
 min-height: 494px;
+visibility: hidden;
 }
 .grid-item{
   width: 25%;
@@ -356,6 +387,9 @@ min-height: 494px;
   padding:0 60px;
   display:block;
   height: 490px;
+  font-family: 'ropa_sansregular';
+  font-style: italic;
+  position: relative;
 }
 .align-content{
   display:table-cell;
@@ -367,24 +401,38 @@ min-height: 494px;
   font-family: 'ropa_sansregular';
   font-size: 60px;
   margin-bottom: 0;
+  margin-top: 0;
+  font-size: 4.2em;
+  line-height: 0.9em;
 }
 .interna h3{
   color: #ffffff;
   margin-top: 0;
   font-family: 'ropa_sansregular';
+  font-size: 1.4em;
+}
+
+.interna .subtitle {
+  font-size: 1.5em;
+  color: #9D9C9C;
+  margin-bottom: 5px;
+  line-height: 1em!important;
 }
 
 .interna p{
-   margin-top: 30px;
+   margin-top: 15px;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 1em;
 }
-.interna p strong{
+.interna p span{
   color: #FFED00;
 }
 
 .interna .actions{
-  margin:30px 0px;
+  /*margin:30px 0px;*/
+  position: absolute;
+  right: 60px;
+  bottom: 45px;
 }
 
 .logo{

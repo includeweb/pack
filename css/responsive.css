@@ -31,6 +31,12 @@
 		padding-bottom: 40px;
 	}
 
+	.interna-content{
+	  padding-top: 40px;
+	  padding-bottom: 50px;
+	  height: auto;
+	}
+
 }
 @media(max-width:420px){
 	.grid-item{
@@ -44,13 +50,16 @@
 
 }
 @media(min-width:768px){
-.interna h2{
+	body {
+		font-size: 10px!important;
+	}
+/*.interna h2{
 	  font-size: 30px;
 
 	}
 	.interna h3{
 	  font-size: 20px;
-	}
+	}*/
 	.padding45 {
 	  padding-left: 45px;
 	  padding-right: 45px;
@@ -91,14 +100,40 @@
 	#somos-text .col-md-5 {
 		padding-right: 15px;
 	}
+
+	.interna-content{
+	  display: table;
+	  height: 316.2px;
+	}
+
+	.interna-img {
+		height: 316.2px;
+	}
 }
 @media(min-width:992px){
-	.interna h2{
+	body {
+		font-size: 12px!important;
+	}
+	/*.interna h2{
 	  font-size: 60px;
 
 	}
 	.interna h3{
 	  font-size: 24px;
+	}*/
+
+	.interna-content,
+	.interna-img{
+	  height: 409px;
 	}
 }
-@media(min-width:1200px){}
+@media(min-width:1200px){
+	body {
+		font-size: 14px!important;
+	}
+
+	.interna-content,
+	.interna-img{
+	  height: 490px;
+	}
+}
