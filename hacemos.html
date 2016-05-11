@@ -27,21 +27,25 @@
     <![endif]-->
 
     <script type="text/javascript" defer>
+      var hash = window.location.hash.substr(1);
+
       $(document).ready(function() {
-        $('.load').fadeIn('slow');
-         $('.logo-title h3').addClass('fadeInLeft').fadeIn('slow');
-            setTimeout(function(){
-              $('.logo-title h2').addClass('fadeInLeft').fadeIn('slow');
-            }, 500); 
-              
-            $('.section-change').click(function(){
-              $('.load').fadeIn();
-            });
-            $('.top').click(function(){
-              $('.grid').fadeOut(function() {
-                $('.load').fadeIn();
-              });
-            });
+        if (!hash) {
+          $('.load').fadeIn('slow');
+          $('.logo-title h3').addClass('fadeInLeft').fadeIn('slow');
+          setTimeout(function(){
+            $('.logo-title h2').addClass('fadeInLeft').fadeIn('slow');
+          }, 500); 
+        }
+          
+        $('.section-change').click(function(){
+          $('.load').fadeIn();
+        });
+        $('.top').click(function(){
+          $('.grid').fadeOut(function() {
+            $('.load').fadeIn();
+          });
+        });
         setTimeout(function(){
           generatePortfolio();
         }, 100);       
@@ -51,12 +55,12 @@
         };
 
         $('.grid-item').hover(function() {
+        var item = $(this).data('item');
+          $('.item-'+item).addClass('show bounceIn');
+        }, function() {
           var item = $(this).data('item');
-            $('.item-'+item).addClass('show bounceIn');
-          }, function() {
-            var item = $(this).data('item');
-            $('.item-'+item).removeClass('show bounceIn');
-          });
+          $('.item-'+item).removeClass('show bounceIn');
+        });
       });
 
       function generatePortfolio(){
@@ -71,7 +75,13 @@
           layoutMode: 'masonry'
          
         });
-        $('.grid').hide();
+        if (!hash) {
+          $('.grid').hide();
+        }
+        else {
+          $('#todo').click();
+          $('.grid').css('visibility', 'visible');
+        }
       
           // filter functions
         var filterFns = {
@@ -153,9 +163,9 @@
     <div class="container">
       <div class="row">
         <div id="filters">  
-          <button class="button is-checked" data-filter="*">todo</button>
-          <button class="button" data-filter=".oficinas">oficinas</button>
-          <button class="button" data-filter=".viviendas">viviendas</button>
+          <button class="button is-checked" id="todo" data-filter="*">todo</button>
+          <button class="button" id="oficinas" data-filter=".oficinas">oficinas</button>
+          <button class="button" id="viviendas" data-filter=".viviendas">viviendas</button>
           <button class="top" ><span class="glyphicon glyphicon-upload"></span></button>
         </div>
       </div>
