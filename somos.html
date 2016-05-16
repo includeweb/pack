@@ -26,9 +26,41 @@
 
     <script type="text/javascript" defer>
       $(document).ready(function() {
+        var active = 0;
+
         if ($('body').height() < $(window).height()) {
           $('body').height($(window).height());
         };
+
+
+        $('#team > div').click(function() {
+          id = $(this).data('nombre');
+          if($(this).hasClass('active-block')) {
+            active = 0;
+            $('#'+id).fadeOut(function() {
+              $('#somos-text').fadeIn();
+            });
+            $(this).removeClass('active-block');
+            $(this).siblings().removeClass('inactive-block');
+          }
+          else {
+            if (active) {
+              $('#'+$('.active-block').data('nombre')).fadeOut(function() {
+                $('#'+id).fadeIn().css('display','block');
+              });
+            }
+            else {
+              $('#somos-text').fadeOut(function() {
+                $('#'+id).fadeIn().css('display','block');;
+              });
+            }
+            active = 1;
+            $('.active-block').removeClass('active-block');
+            $(this).removeClass('inactive-block');
+            $(this).addClass('active-block');
+            $(this).siblings().addClass('inactive-block');
+          }
+        });
       });
     </script>
 </head>
@@ -64,8 +96,6 @@
                 <li><a href="estilo.html" class="section-change" >estilo</a></li>
                 <li><a href="contacto.html" class="section-change" >contacto</a></li>
               </ul>
-       
-             
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
@@ -73,40 +103,65 @@
     </header>
     <div class="container">
       <div id="team" class="row">
-        <div class="col-sm-4" style="background-color:#E61B7F">
-          <div class="row">
-            <div class="col-md-12 team-photo">
-              <div>
-                <img src="images/somos/savid.jpg">
-              </div>
-            </div>
-            <div class="col-md-12 padding45" style="background-color:rgba(150,150,150,0.5)">Arq. Ignacio Savid</div>
-          </div>
-        </div>
-        <div class="col-sm-4" style="background-color:#5CC3F0">
-          <div class="row">
-            <div class="col-md-12 team-photo">
-              <div>
-                <img src="images/somos/campodonico.jpg">
-              </div>
-            </div>
-            <div class="col-md-12 padding45" style="background-color:rgba(150,150,150,0.5)">Arq. Cristian Campodónico</div>
-          </div>
-        </div>
-        <div class="col-sm-4" style="background-color:#7FBB46">
+        <div class="col-sm-4" data-nombre="aguirre">
           <div class="row">
             <div class="col-md-12 team-photo">
               <div>
                 <img src="images/somos/aguirre.jpg">
+                <div class="padding45 padding15-xs">Arq. Marcos Aguirre</div>
               </div>
             </div>
-            <div class="col-md-12 padding45" style="background-color:rgba(150,150,150,0.5)">Arq. Marcos Aguirre</div>
+            <!-- <div class="col-md-12 padding45" style="background-color: #72676b">Arq. Marcos Aguirre</div> -->
           </div>
         </div>
+        <div class="col-sm-4" data-nombre="campodonico">
+          <div class="row">
+            <div class="col-md-12 team-photo">
+              <div>
+                <img src="images/somos/campodonico.jpg">
+                <div class="padding45 padding15-xs">Arq. Cristian Campodónico</div>
+              </div>
+            </div>
+            <!-- <div class="col-md-12 padding45" style="background-color: #8f969a">Arq. Cristian Campodónico</div> -->
+          </div>
+        </div>
+        <div class="col-sm-4" data-nombre="savid">
+          <div class="row">
+            <div class="col-md-12 team-photo">
+              <div>
+                <img src="images/somos/savid.jpg">
+                <div class="padding45 padding15-xs">
+                  Arq. Ignacio Savid
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-12 padding45" style="background-color: #72676b">Arq. Ignacio Savid</div> -->
+          </div>
+        </div>
+        
       </div>
-      <div id="somos-text" class="row">
+      <div id="somos-text" class="row somos-text">
         <div class="col-md-4 col-sm-4 padding45"><span>SOMOS</span><br /><span>PACK</span></div>
         <div class="col-md-5 col-sm-7 padding45"><span>Somos una oficina de Arquitectura que ofrece una solución integral a los problemas de diseño en espacios de trabajo. Trabajamos junto a nuestros clientes entendiendo sus problemáticas, dinámica de trabajo y características particulares para afrontar cada nuevo encargo. Ofrecemos un servicio personalizado, a la medida de cada compañia. Basamos nuestro trabajo en la confianza y la transparencia, herramientas necesarias para llegar a buen puerto en cada nuevo proyecto.</span></div>
+      </div>
+      <div id="aguirre" class="row somos-text">
+        <div class="col-md-4 col-sm-4 padding45"><span class="arq">ARQ.</span><br /><span class="nombre">MARCOS</span><br /><span class="apellido">AGUIRRE</span></div>
+        <div class="col-md-6 cv-text col-sm-7 padding45"><span>Arquitecto graduado en la Facultad de Arquitectura, Diseño y Urbanismo de la Universidad de Buenos Aires. Junto a Cristian Campodonico e Ignacio Savid, funda Pack Arquitectura.
+Como Director de construcciones y obras civiles es responsable de la ejecución de cada proyecto. Su amplia experiencia como jefe de obra en diferentes estudios de arquitectura y empresas constructoras le permite llevar a cabo obras de diversas escalas que abarcan desde proyectos de interiorismo, hasta edificios de oficina y conjuntos de viviendas. 
+Realizo el Programa de Gestión y Desarrollo de Negocios Inmobiliarios (GDI) en la Universidad de San Andres.
+</span></div>
+      </div>
+      <div id="campodonico" class="row somos-text">
+        <div class="col-md-4 col-sm-4 padding45"><span class="arq">ARQ.</span><br /><span class="nombre">CRISTIAN</span><br /><span class="apellido-campo">CAMPODONICO</span></div>
+        <div class="col-md-6 cv-text col-sm-7 padding45"><span>Arquitecto graduado de la Universidad de Buenos Aires, junto a Marcos Aguirre y Cristian Campodonico funda PACK Arquitectura. Aporta su experiencia en Arquitectura comercial y el desarrollo de oficinas, liderando los proyectos desde el desarrollo inicial del diseño, hasta su concreción.
+Trabajó en importantes estudios, como Point Design, o Sasaki Associates en Boston, Massachusetts, donde participó de proyectos de Arquitectura de diversas escalas y complejidades. Actualmente enseña Arquitectura en la Facultad de Arquitectura, Diseño y Urbanismo. Es Consejero por el claustro de graduados en la misma facultad.
+</span></div>
+      </div>
+      <div id="savid" class="row somos-text">
+        <div class="col-md-4 col-sm-4 padding45"><span class="arq">ARQ.</span><br /><span class="nombre">IGNACIO</span><br /><span class="apellido">SAVID</span></div>
+        <div class="col-md-6 cv-text col-sm-7 padding45"><span>Arquitecto graduado en la Facultad de Arquitectura, Diseño y Urbanismo de la Universidad de Buenos Aires, donde ejerció como docente de la materia Arquitectura en la cátedra Baudizzone. 
+Trabajó en el estudio Point Design como director de obra y proyectista en diversos proyectos de oficinas, retail, vivienda y desarrollos inmobiliarios. Trabaja en forma independiente en el diseño de espacios de trabajo hasta que funda PACK Arquitectura junto a Marcos Aguirre e Ignacio Savid, donde se desempeña como Director comercial y es responsable de la coordinación general de la empresa. 
+</span></div>
       </div>
     </div>
     <footer class="container">

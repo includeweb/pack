@@ -30,134 +30,14 @@
       var hash = window.location.hash.substr(1);
 
       $(document).ready(function() {
-        $('#hacemos').css('visibility','visible');
-        var $grid = $('.grid').isotope({
+        $('#hacemos').css('visibility', 'visible');
+        $('.grid').isotope({
           itemSelector: '.grid-item',
-          layoutMode: 'masonry'
+          layoutMode: 'fitRows'
         });
 
 
-        if (hash == '') {
-          console.log(hash);
-          $('.grid').hide();
-          $('.load').fadeIn('slow');
-          $('.logo-title h3').addClass('fadeInLeft').fadeIn('slow');
-          setTimeout(function(){
-            $('.logo-title h2').addClass('fadeInLeft').fadeIn('slow');
-          }, 500);
-        }
-        else {
-          $('.load').hide();
-          if (hash == 'todo') {
-            var filterValue = '*';
-            $('.grid').isotope({ filter: filterValue });
-          } 
-          else {
-            var filterValue = hash;
-            $('.grid').isotope({ filter: '.'+filterValue });
-          }
-          // use filterFn if matches value
-          // filterValue = filterFns[ filterValue ] || filterValue;
-
-        }
-        
-        // $('.load').fadeIn('slow');
-        // $('.logo-title h3').addClass('fadeInLeft').fadeIn('slow');
-        // setTimeout(function(){
-        //   $('.logo-title h2').addClass('fadeInLeft').fadeIn('slow');
-        // }, 500); 
-        
-          
-        // $('.section-change').click(function(){
-        //   $('.load').fadeIn();
-        // });
-        // $('.top').click(function(){
-        //   $('.grid').fadeOut(function() {
-        //     $('.load').fadeIn();
-        //   });
-        // });
-        // setTimeout(function(){
-        //   generatePortfolio();
-        // }, 100);       
-
-        if ($('body').height() < $(window).height()) {
-          $('body').height($(window).height());
-        };
-
-        $('.grid-item').hover(function() {
-        var item = $(this).data('item');
-          // $('.item-'+item).addClass('show');
-          $('.item-'+item).stop();
-          $('.item-'+item).fadeIn();
-        }, function() {
-          var item = $(this).data('item');
-          // $('.item-'+item).removeClass('show');
-          $('.item-'+item).stop();
-          $('.item-'+item).fadeOut();
-        });
-
-        // if (hash != '') {
-        //   console.log(hash);
-        //   $('#'+hash).click();
-        // }
-        // else {
-        // }
-        //   $('#hacemos').css('visibility', 'visible');
-
-        // filter functions
-        var filterFns = {
-          // show if number is greater than 50
-          numberGreaterThan50: function() {
-            var number = $(this).find('.number').text();
-            return parseInt( number, 10 ) > 50;
-          },
-          // show if name ends with -ium
-          ium: function() {
-            var name = $(this).find('.name').text();
-            return name.match( /ium$/ );
-          }
-        };
-
-        // bind filter button click
-        $('#filters').on( 'click', '.button', function() {
-          if ($('.grid').is(':visible')) {
-            console.log('hola');
-            var filterValue = $( this ).attr('data-filter');
-            // use filterFn if matches value
-            filterValue = filterFns[ filterValue ] || filterValue;
-            $grid.isotope({ filter: filterValue });
-          }
-          else {
-            $('.grid').css('visibility', 'visible');
-            $('.load').fadeOut('slow', function() {
-              $('.grid').fadeIn('slow', function() {
-                var filterValue = $( this ).attr('data-filter');
-                // use filterFn if matches value
-                filterValue = filterFns[ filterValue ] || filterValue;
-                $grid.isotope({ filter: filterValue });
-              });
-              
-            });
-          }
-        });
-
-        
       });
-
-      
-      
-
-
-      function generatePortfolio(){
-        
-        var height = $('.1').height();
-        $('.violeta').height(height);
-        $('.verde').height(height);
-        $('.verde2').height(height);
-         // init Isotope
-        return $grid;
-
-      }
 
     </script>
 </head>
@@ -203,9 +83,9 @@
     <div class="container">
       <div class="row">
         <div id="filters">  
-          <button class="button is-checked" data-filter="*">todo</button>
-          <button class="button" data-filter=".oficinas">oficinas</button>
-          <button class="button" data-filter=".viviendas">viviendas</button>
+          <button class="button is-checked" id="todo" data-filter="*">todo</button>
+          <button class="button" id="oficinas" data-filter=".oficinas">oficinas</button>
+          <button class="button" id="viviendas" data-filter=".viviendas">viviendas</button>
           <!-- <button class="top" ><span class="glyphicon glyphicon-upload"></span></button> -->
         </div>
       </div>
@@ -232,7 +112,7 @@
       </div> -->
       </div>
       <div class="row grid">
-        <a href="oficinas/quasar-ventures.html">
+        <!-- <a href="oficinas/quasar-ventures.html"> -->
         <div class="grid-item 1 oficinas" data-item="1">
           <div class="box animated item-1">
             <div class="circle"></div>
@@ -240,8 +120,8 @@
           </div>
           <img src="images/hacemos/quasar_ventures_mini.jpg" class="img-responsive" />
         </div>
-        </a>
-        <a href="oficinas/puente-hermanos.html">
+        <!-- </a> -->
+        <!-- <a href="oficinas/puente-hermanos.html"> -->
         <div class="grid-item oficinas" data-item="2">
           <div class="box animated item-2">
             <div class="circle"></div>
@@ -249,8 +129,8 @@
           </div>
           <img src="images/hacemos/puente_hermanos_mini.jpg" class="img-responsive" />
         </div>
-        </a>
-        <a>
+        <!-- </a> -->
+        <!-- <a> -->
         <div class="grid-item oficinas" data-item="3">
           <div class="box animated item-3">
             <div class="circle"></div>
@@ -258,8 +138,8 @@
           </div>
           <img src="images/hacemos/placeholder.png" class="img-responsive" />
         </div>
-        </a>
-        <a>
+        <!-- </a> -->
+        <!-- <a> -->
         <div class="grid-item oficinas" data-item="4">
           <div class="box animated item-4">
             <div class="circle"></div>
@@ -267,8 +147,8 @@
           </div>
           <img src="images/hacemos/placeholder.png" class="img-responsive" />
         </div>
-        </a>
-        <a href="oficinas/cascba.html">
+        <!-- </a> -->
+        <!-- <a href="oficinas/cascba.html"> -->
         <div class="grid-item oficinas" data-item="5">
           <div class="box animated item-5">
             <div class="circle"></div>
@@ -276,8 +156,8 @@
           </div>
           <img src="images/hacemos/cascba_mini.jpg" class="img-responsive" />
         </div>
-        </a>
-        <a href="oficinas/casino.html">
+        <!-- </a> -->
+        <!-- <a href="oficinas/casino.html"> -->
         <div class="grid-item oficinas" data-item="6">
           <div class="box animated item-6">
             <div class="circle"></div>
@@ -285,8 +165,8 @@
           </div>
           <img src="images/hacemos/casino_club_mini.jpg" class="img-responsive" />
         </div>
-        </a>
-        <a href="oficinas/edelman.html">
+        <!-- </a> -->
+        <!-- <a href="oficinas/edelman.html"> -->
         <div class="grid-item oficinas" data-item="7">
           <div class="box animated item-7">
             <div class="circle"></div>
@@ -294,8 +174,8 @@
           </div>
           <img src="images/hacemos/edelman_mini.jpg" class="img-responsive" />
         </div>
-        </a>
-        <a>
+        <!-- </a> -->
+        <!-- <a> -->
          <div class="grid-item oficinas" data-item="8">
           <div class="box animated item-8">
             <div class="circle"></div>
@@ -303,40 +183,8 @@
           </div>
           <img src="images/hacemos/placeholder.png" class="img-responsive" />
         </div>
-        </a>
+        <!-- </a> -->
       </div>
-     <!-- <div class="row grid">
-        <div class="grid-item item-">
-          <div class="grid-animated animated">
-            <div class="opacity-b"></div>
-            <div class="box">
-              <div class="cuadro">test<br>test</div>
-            </div>
-          </div>
-          <img src="images/hacemos/quasar_ventures_mini.jpg" class="img-responsive" />
-        </div>
-        <div class="grid-item item-2">
-          <div class="opacity-b"></div>
-          <div class="box">
-            <div class="cuadro">test<br>test</div>
-          </div>
-          <img src="images/hacemos/puente_hermanos_mini.jpg" class="img-responsive" />
-        </div>
-        <div class="grid-item  item-3">
-          <div class="opacity box">
-            <div class="grid-item-box">
-              
-            </div>
-          </div>
-        </div> 
-        <div class="grid-item  item-4">
-          <div class="opacity box">
-            <div class="grid-item-box">
-              
-            </div>
-          </div>
-        </div>
-      </div>-->
      
     </div>
     <footer class="container">

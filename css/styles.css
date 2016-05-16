@@ -113,7 +113,7 @@
 }
 
 .logo-header {
-  background-color: #282624;
+  background-color: #1F2022;
   padding: 15px 0;
 }
 
@@ -126,6 +126,11 @@
   width: 100%;
 }
 
+.amarillo > div {
+  padding-top:50px;
+  padding-bottom:50px;
+}
+
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
     color: #FCED18;
     transition: all 1s ease;
@@ -136,6 +141,8 @@
 .amarillo > div {
   display: table-cell;
   vertical-align: middle;
+  padding-top:50px!important;
+  padding-bottom:50px!important;
 }
 
 .amarillo img {
@@ -205,10 +212,58 @@
   font-family: 'ropa_sansregular';
   font-size: 1.4em;
   color: rgb(237, 237, 237);
+  cursor: pointer;
+}
+
+#team > div {
+  background-color: #000;
+}
+
+#team > .active-block .team-photo > div > div {
+  background-color: rgba(255, 237, 0,0.85)!important;
+}
+
+#team > .active-block .team-photo > div > div {
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+#team > div .team-photo > div > div {
+  background-color: rgba(128,130,133,0.85);
+}
+
+#team > div:first-child .team-photo > div > div,
+#team > div:last-child .team-photo > div > div {
+  background-color: rgba(85,88,90,0.85);
+}
+
+#team > .team-photo img {
+  opacity: 0.3;
+}
+
+#team > .inactive-block .team-photo img {
+  opacity: 0.3;
+}
+
+#team > .inactive-block .team-photo img {
+  -webkit-transition:  0.8s;
+  -moz-transition:  0.8s;
+  transition:  0.8s;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
 }
 
 #team .team-photo > div {
   margin: 0 -15px;
+  position: relative;
+}
+
+#team .team-photo > div > div {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }
 
 #team .team-photo img {
@@ -222,9 +277,18 @@
 
 #somos-text,
 #estilo-text,
-#hacemos-text {
+#hacemos-text,
+#contacto-text,
+#aguirre,
+#campodonico,
+#savid {
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+#contacto-text {
+  background-color: #404040;
+  color: #FFFFFF;
 }
 
 #somos-text {
@@ -233,7 +297,10 @@
 }
 
 #estilo-text,
-#hacemos-text {
+#hacemos-text,
+#aguirre,
+#campodonico,
+#savid {
   background-color: #373534;
   color: #FFFFFF;
 }
@@ -241,7 +308,8 @@
 #somos-text .col-md-4 span:first-child,
 #estilo-text .col-md-4 span:first-child,
 #hacemos-text .col-md-4 span:first-child,
-.titulo-contacto span:first-child {
+.titulo-contacto span:first-child,
+.arq {
   font-family: 'ropa_sansitalic';
   font-size: 3.5em;
   line-height: 0.7em;
@@ -257,6 +325,30 @@
   margin-left: -11px;
 }
 
+.nombre {
+  color: #FFF100;
+}
+
+.apellido,
+.apellido-campo {
+  color: #919396;
+}
+
+.nombre,
+.apellido {
+  font-family: 'audimatregular';
+  font-size: 5.75em;
+  line-height: 0.7em;
+  margin-left: -6px;
+}
+
+.apellido-campo {
+  font-family: 'audimatregular';
+  font-size: 4em;
+  line-height: 0.7em;
+  margin-left: -4px;
+}
+
 #estilo-text .col-md-4 span:last-child,
 #hacemos-text .col-md-4 span:last-child,
 .titulo-contacto span:last-child {
@@ -265,17 +357,29 @@
 
 #somos-text .col-md-5,
 #estilo-text .col-md-5,
-#hacemos-text .col-md-5 {
+#hacemos-text .col-md-5,
+#aguirre .cv-text,
+#campodonico .cv-text,
+#savid .cv-text {
   font-family: 'ropa_sansregular', Arial;
-    padding-top: 30px;
+  /*padding-top: 30px;*/
 }
 
 #somos-text .col-md-5 span,
 #estilo-text .col-md-5 span,
-#hacemos-text .col-md-5 span {
+#hacemos-text .col-md-5 span,
+#aguirre .cv-text span,
+#campodonico .cv-text span,
+#savid .cv-text span {
   font-family: 'ropa_sansregular', Arial;
-  font-size: 0.9em;
-  line-height: 0.9em;
+  font-size: 0.95em;
+  line-height: 0.95em;
+}
+
+#aguirre,
+#campodonico,
+#savid {
+  display: none;
 }
 
 
@@ -308,7 +412,7 @@
   transition:all .5s ease;
 }
 .load{
-  display: none;
+  /*display: none;*/
   float: left;
 }
 .top {
@@ -317,7 +421,7 @@
 }
 .grid{
 min-height: 494px;
-visibility: hidden;
+/*visibility: hidden;*/
 }
 .grid-item{
   width: 25%;
@@ -344,23 +448,24 @@ visibility: hidden;
 }
 .box{
   display: none;
-  border:1px solid #FFFE00;
+  border:1px solid #939597;
   z-index: 500;
   position: absolute;
-  margin-left: 20%;
-  margin-right: 20%;
-  width: 60%;
-  margin-top: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+  margin-top: 11%;
   margin-bottom: 10%;
-  height: 80%;
+  height: 75%;
   padding:20px;
 
 }
 
 .box-text{
-  color: #FFED00;
-  font-size: 22px;
-  font-family: 'ropa_sansregular';
+  color: #939597;
+  font-size: 1.4em;
+  line-height: 1em;
+  font-family: 'ropa_sansitalic';
   position: absolute;
   bottom: 20px;
   text-align: right;
@@ -371,7 +476,7 @@ visibility: hidden;
   border-radius: 50%;
   width: 10px;
   height: 10px; 
-  background-color: #FFED00;
+  background-color: #939597;
   float: right;
   /* width and height can be anything, as long as they're equal */
 }
@@ -391,8 +496,7 @@ visibility: hidden;
   padding:0 60px;
   display:block;
   height: 490px;
-  font-family: 'ropa_sansregular';
-  font-style: italic;
+  font-family: 'ropa_sansitalic';
   position: relative;
 }
 .align-content{
@@ -402,7 +506,7 @@ visibility: hidden;
 }
 .interna h2{
   color: #FFED00;
-  font-family: 'ropa_sansregular';
+  font-family: 'ropa_sansitalic';
   font-size: 60px;
   margin-bottom: 0;
   margin-top: 0;
@@ -412,7 +516,7 @@ visibility: hidden;
 .interna h3{
   color: #ffffff;
   margin-top: 0;
-  font-family: 'ropa_sansregular';
+  font-family: 'ropa_sansitalic';
   font-size: 1.4em;
 }
 
@@ -487,24 +591,26 @@ visibility: hidden;
 }
 
 .carousel-control {
-  bottom: 40px;
+  bottom: 25px;
   top: auto;
-  
+  background: none;
+  background-image: none!important;
+  width: auto;
 }
 
 .carousel-control.right {
-  right: 0;
+  right: 25px;
   left: auto;
 }
 
 .carousel-control.left {
-  right: 70px;
+  right: 100px;
   left: auto;
 }
 
 .carousel-control.mid {
-  bottom: 25px;
-  right: 35px;
+  bottom: 26px;
+  right: 50px;
   left: auto;
   font-family: 'audimatregular';
 }
@@ -556,4 +662,8 @@ visibility: hidden;
 
 .logo-nav {
   max-width: 120px;
+}
+
+#hacemos {
+  visibility: hidden;
 }

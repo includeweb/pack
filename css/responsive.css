@@ -37,6 +37,11 @@
 	  height: auto;
 	}
 
+	.padding15-xs {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
 }
 @media(max-width:420px){
 	.grid-item{
