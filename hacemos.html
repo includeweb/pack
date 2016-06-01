@@ -28,6 +28,9 @@
 
     <script type="text/javascript" defer>
       var hash = window.location.hash.substr(1);
+      $(window).on("load", function() {
+        $('.grid').isotope('layout');
+      });
 
       $(document).ready(function() {
         $('#hacemos').css('visibility','visible');
@@ -56,6 +59,7 @@
             var filterValue = hash;
             $('.grid').isotope({ filter: '.'+filterValue });
           }
+          
           // use filterFn if matches value
           // filterValue = filterFns[ filterValue ] || filterValue;
 
@@ -298,6 +302,25 @@
         <a>
          <div class="grid-item oficinas" data-item="8">
           <div class="box animated item-8">
+            <div class="circle"></div>
+            <div class="box-text">PROXIMAMENTE</div>
+          </div>
+          <img src="images/hacemos/placeholder.png" class="img-responsive" />
+        </div>
+        </a>
+
+        <a href="viviendas/savid.html">
+         <div class="grid-item viviendas" data-item="9">
+          <div class="box animated item-9">
+            <div class="circle"></div>
+            <div class="box-text">SAVID</div>
+          </div>
+          <img src="images/hacemos/savid_mini.jpg" class="img-responsive" />
+        </div>
+        </a>
+        <a>
+         <div class="grid-item viviendas" data-item="10">
+          <div class="box animated item-10">
             <div class="circle"></div>
             <div class="box-text">PROXIMAMENTE</div>
           </div>
