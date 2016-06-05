@@ -100,7 +100,7 @@
 
 
 .home{ 
-  background: url(../images/home-background.jpg) no-repeat center center fixed; 
+  /*background: url(../images/home-background.jpg) no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -451,12 +451,12 @@ min-height: 494px;
   border:1px solid #939597;
   z-index: 500;
   position: absolute;
-  margin-left: 15%;
-  margin-right: 15%;
-  width: 70%;
-  margin-top: 11%;
+  margin-left: 18%;
+  margin-right: 18%;
+  width: 64%;
+  margin-top: 10%;
   margin-bottom: 10%;
-  height: 75%;
+  height: 76%;
   padding:20px;
 
 }

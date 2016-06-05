@@ -27,6 +27,8 @@
         $('.section-change').click(function(){
           template.load(web.template, 'body', {data: web}); 
         });
+        var num = Math.floor(Math.random() * 6) + 1;
+        $('body').css('background','url(./images/inicio_imag'+num+'.jpg) no-repeat center center fixed')
     });
     </script>
   </body>
