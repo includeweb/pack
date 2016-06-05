@@ -90,15 +90,15 @@
         </div>
        
         <div class="row files-container">
-            <?foreach ($files as $file) {?>
+            <?php foreach ($files as $file) {?>
                 <div class="col-md-2 file <?=$file->type;?>" id="media-<?=$file->id;?>">
                 <div class="thumbnail">
-                    <?if($file->type != 'jpg' && $file->type != 'gif' && $file->type != 'png' ){ ?>
+                    <?php if($file->type != 'jpg' && $file->type != 'gif' && $file->type != 'png' ){ ?>
                       <div style="text-align:center;min-height:100px;padding:20px"> <span class="glyphicon glyphicon-file" style="font-size:62px;"></span> </div>
-                    <? }else{ ?>
+                    <?php }else{ ?>
                         <img src="<?=base_url();?>uploads/<?=$file->file;?>" alt="..." class="img-responsive">
                       
-                    <? } ?>
+                    <?php } ?>
                   <div class="caption">
                  
                     <h4><?=$file->name;?></h4>
@@ -113,7 +113,7 @@
                 </div>
               
                 </div>
-            <? } ?>
+            <?php } ?>
            
         </div>
     </div>

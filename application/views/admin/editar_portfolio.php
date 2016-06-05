@@ -24,43 +24,43 @@
 
 						  <div class="form-group">
 						    <label for="titulo">Titulo</label>
-						    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" required > 
+						    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" required value="<?=$item->titulo?>" > 
 						  </div> 
 						  <div class="form-group">
 						    <label for="subtitulo">Subtitulo</label>
-						    <input type="text" class="form-control" id="subtitulo" name="subtitulo" placeholder="Subtitulo" required > 
+						    <input type="text" class="form-control" id="subtitulo" name="subtitulo" placeholder="Subtitulo" required value="<?=$item->subtitulo?>" > 
 						  </div>
 						  <div class="form-group">
 						    <label for="comentario">Comentario</label>
-						    <textarea class="form-control" name="comentario" id="comentario"></textarea>
+						    <textarea class="form-control" name="comentario" id="comentario" value="<?=$item->comentario?>"><?=$item->comentario?></textarea>
 						  </div> 
 						  <div class="form-group">
 						    <label for="ubicacion">Ubicación</label>
-						    <input type="text" class="form-control" id="ubicacion" name="ubicacion" placeholder="Ubicación" required > 
+						    <input type="text" class="form-control" id="ubicacion" name="ubicacion" placeholder="Ubicación" required value="<?=$item->ubicacion?>"> 
 						  </div>
 						  <div class="form-group">
 						    <label for="ano">Año</label>
-						    <input type="text" class="form-control" id="ano" name="ano" required > 
+						    <input type="text" class="form-control" id="ano" name="ano" required value="<?=$item->ano?>" > 
 						  </div>  
 						  <div class="form-group">
 						    <label for="superficie">Superficie</label>
-						    <input type="text" class="form-control" id="superficie" name="superficie" required placeholder="Superficie"> 
+						    <input type="text" class="form-control" id="superficie" name="superficie" required placeholder="Superficie" value="<?=$item->superficie?>"> 
 						  </div>
 						  <div class="form-group">
 						    <label for="actividad">Actividad</label>
-						     <textarea class="form-control" name="actividad" id="actividad"></textarea>
+						     <textarea class="form-control" name="actividad" id="actividad"><?=$item->actividad?></textarea>
 						  </div>
 						  <div class="form-group">
 						    <label for="tiempo">Tiempo de obra</label>
-						    <input type="text" class="form-control" id="tiempo" name="tiempo" placeholder="Tiempo de obra" required > 
+						    <input type="text" class="form-control" id="tiempo" name="tiempo" placeholder="Tiempo de obra" required value="<?=$item->tiempo?>"> 
 						  </div>
 						  <div class="form-group">
 						    <label for="modalidad">Modalidad de trabajo</label>
-						    <input type="text" class="form-control" id="modalidad" name="modalidad" placeholder="Modalidad de trabajo" required > 
+						    <input type="text" class="form-control" id="modalidad" name="modalidad" placeholder="Modalidad de trabajo" required value="<?=$item->modalidad?>" > 
 						  </div> 
 						  <div class="form-group">
 						    <label for="proyecto">Proyecto</label>
-						    <input type="text" class="form-control" id="proyecto" name="proyecto" placeholder="Proyecto" required > 
+						    <input type="text" class="form-control" id="proyecto" name="proyecto" placeholder="Proyecto" required value="<?=$item->proyecto?>"> 
 						  </div>
 
 						  
@@ -148,14 +148,14 @@
       </div>
       <div class="modal-body" >
       
-			  	<?foreach ($imagenes as $imagen) {?>
+			  	<?php foreach ($imagenes as $imagen) {?>
 		    		<div class="imagen-contenedor">
 					    <a href="javascript:void(0);" class="thumbnail imagenes-carousel" data-id="<?=$imagen->id;?>" data-src="<?=base_url().'uploads/'.$imagen->file;?>">
 					      <img src="<?=base_url().'uploads/'.$imagen->file;?>" />
 					    </a>
 					   <div class="imagen-name"><?=$imagen->name;?></div>
 					  </div>
-		    	<? } ?>
+		    	<?php } ?>
 		
     
       </div>

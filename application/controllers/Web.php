@@ -19,7 +19,7 @@ class Web extends CI_Controller {
 	}
 
 	public function portfolio($categoria = null, $portfolio = null){
-		if($categoria != '' && $portfolio != ''){
+		if($categoria != null && $portfolio != null){
 			$this->db->select('*');
 			$this->db->from('portfolio');
 			$this->db->where('url', $portfolio);
@@ -33,6 +33,7 @@ class Web extends CI_Controller {
 			$this->db->select('*');
 			$this->db->from('portfolio');
 			$data['items'] = $this->db->get()->result();
+			// die(print_r($data['items']));
 
 			$this->load->view('web/masonry', $data);
 		}

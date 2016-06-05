@@ -81,6 +81,28 @@ class Admin extends CI_Controller {
 
 	}
 
+	public function editar_portfolio($id){
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		} else {
+			
+			$data['user_id']	= $this->tank_auth->get_user_id();
+			$data['username']	= $this->tank_auth->get_username();
+			$data['role'] = $this->tank_auth->get_role();
+			$data['active_tab'] = 'portfolio';
+			$this->db->select('*');
+			$this->db->from('media');
+			$this->db->where_in('type', array('jpg', 'png', 'jpeg'));
+			$data['imagenes'] = $this->db->get()->result();
+			$this->db->select('*');
+			$this->db->from('portfolio');
+			$this->db->where('id', $id);
+			$data['item'] = $this->db->get()->row();
+			$this->layout->view('editar_portfolio', $data);
+		}
+
+	}
+
 	
 	
 

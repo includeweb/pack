@@ -59,7 +59,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                    <?foreach ($portfolios as $portfolio) {?>
+                    <?php foreach ($portfolios as $portfolio) {?>
                         <tr>
                             <td><?=$portfolio->id?></td>
                             <td><?=$portfolio->titulo?></td>
@@ -76,7 +76,7 @@
                                 
                             <td>
                         </tr>
-                    <? } ?>
+                    <?php } ?>
 
                     </tbody>
                 </table>          

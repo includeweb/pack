@@ -227,7 +227,7 @@
    
       </div>
       <div class="row grid">asdasd
-      <?
+      <?php
       $c = 1;
       foreach ($items as $item) {?>
        
@@ -241,7 +241,7 @@
           <img src="<?=$item->imagen;?>" class="img-responsive" />
         </div>
         </a>
-       <?$c++; } ?>
+       <?php $c++; } ?>
       </div>
 
     </div>

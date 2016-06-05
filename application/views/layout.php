@@ -54,12 +54,12 @@
            
             <div class="panel-body">
             <ul class="nav nav-pills nav-stacked">
-              <li role="presentation" class="dashboard-tab <?if($active_tab == 'dashboard'){echo "active";}?>"><a href="<?=base_url();?>admin"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
-              <li role="presentation" class="productos-tab <?if($active_tab == 'portfolio'){echo "active";}?>"><a href="<?=base_url();?>admin/portfolio" class="list-group-item"><span class="glyphicon glyphicon-th-list"></span> Portfolio</a></li>
-              <!--<li role="presentation" class="productos-tab <?if($active_tab == 'textos'){echo "active";}?>"><a href="<?=base_url();?>admin/textos" class="list-group-item"><span class="glyphicon glyphicon-align-left"></span> Textos</a></li>-->
-              <li role="presentation" class="productos-tab <?if($active_tab == 'media'){echo "active";}?>"><a href="<?=base_url();?>admin/media" class="list-group-item"><span class="glyphicon glyphicon-picture"></span> Media</a></li>
-              <li role="presentation" class="contactos-tab <?if($active_tab == 'contactos'){echo "active";}?>"><a href="<?=base_url();?>admin/contactos" class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span> Contactos</a></li>
-              <li role="presentation" class="cvs-tab <?if($active_tab == 'usuarios'){echo "active";}?>"><a href="<?=base_url();?>admin/usuarios" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Usuarios</a></li>
+              <li role="presentation" class="dashboard-tab <?php if($active_tab == 'dashboard'){echo "active";}?>"><a href="<?=base_url();?>admin"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
+              <li role="presentation" class="productos-tab <?php if($active_tab == 'portfolio'){echo "active";}?>"><a href="<?=base_url();?>admin/portfolio" class="list-group-item"><span class="glyphicon glyphicon-th-list"></span> Portfolio</a></li>
+              <!--<li role="presentation" class="productos-tab <?php if($active_tab == 'textos'){echo "active";}?>"><a href="<?=base_url();?>admin/textos" class="list-group-item"><span class="glyphicon glyphicon-align-left"></span> Textos</a></li>-->
+              <li role="presentation" class="productos-tab <?php if($active_tab == 'media'){echo "active";}?>"><a href="<?=base_url();?>admin/media" class="list-group-item"><span class="glyphicon glyphicon-picture"></span> Media</a></li>
+              <li role="presentation" class="contactos-tab <?php if($active_tab == 'contactos'){echo "active";}?>"><a href="<?=base_url();?>admin/contactos" class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span> Contactos</a></li>
+              <li role="presentation" class="cvs-tab <?php if($active_tab == 'usuarios'){echo "active";}?>"><a href="<?=base_url();?>admin/usuarios" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Usuarios</a></li>
             </ul>
             </div>
           </div>
