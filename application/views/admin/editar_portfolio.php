@@ -1,6 +1,8 @@
 <?php echo add_jscript('jquery.multi-select');?>   
 <?php echo add_style('multi-select');?>  
 <?php echo add_style('edit');?>
+
+<? $carouseles = explode(",", $item->carousel); ?>
 <div class="panel panel-default">
 	<div class="panel-heading">
 	<div class="row">
@@ -77,16 +79,16 @@
 				<div class="form-group">
 					<select class="form-control" name="categoria" class="required" id="categoria">
 						<option>Seleccione</option>
-						<option value="oficinas">Oficina</option>
-						<option value="viviendas">Vivienda</option>
+						<option value="oficinas" <?if($item->categoria == 'oficinas'){echo 'selected';}?>>Oficina</option>
+						<option value="viviendas" <?if($item->categoria == 'viviendas'){echo 'selected';}?>>Vivienda</option>
 					</select>
 				</div>
 				<h4>Imagen Portfolio <a href="javascript:void(0);" class="btn btn-default imagen-principal" style="float:right">+</a></h4>
 				<hr>
 				<div class="">
 				   
-				   <img src="" id="imagen-principal-selected" class="thumbnail" width="250" style="display:none;" />
-				   <input type="hidden" id="imagen-principal" value="" class="required" name="imagenp"/>
+				   <img src="<?=$item->imagen;?>" id="imagen-principal-selected" class="thumbnail" width="250"  />
+				   <input type="hidden" id="imagen-principal" value="<?=$item->imagen;?>" class="required" name="imagenp"/>
 			  	
 			  	</div>
 
@@ -94,8 +96,12 @@
 				<hr>
 				<div class="">
 				  
-				   <div id="imagenes-carousel-contenedor"></div>
-				   <input type="hidden" id="imagen-carousel" value="" class="required" name="imagenc"/>
+				   <div id="imagenes-carousel-contenedor">
+				   	<? foreach ($carouseles as $carousel) {?>
+				   		<img src="<?=$carousel;?>" class="thumbnail" width="250"/>
+				   	<? } ?>
+				   </div>
+				   <input type="hidden" id="imagen-carousel" value="<?=$item->carousel;?>" class="required" name="imagenc"/>
 			  	</div>
 				
 				
@@ -175,6 +181,7 @@
 
 		
 		$('.guardar-item').click(function(){
+			var id = <?=$item->id?>;
 			var titulo = $('#titulo').val();
 			var subtitulo = $('#subtitulo').val();
 			var comentario = $('#comentario').val();
@@ -193,8 +200,8 @@
 				$('.alert-danger').hide();
 				$.ajax({
 				  type: "POST",
-				  url: '<?=base_url();?>admin/saveItem',
-				  data: {proyecto: proyecto,titulo: titulo, subtitulo: subtitulo, comentario: comentario, ubicacion:ubicacion, tiempo: tiempo, ano: ano, actividad: actividad, modalidad: modalidad, imagenp: imagenp, imagenc: imagenc, categoria: categoria, superficie:superficie},
+				  url: '<?=base_url();?>admin/editItem',
+				  data: {id:id, proyecto: proyecto,titulo: titulo, subtitulo: subtitulo, comentario: comentario, ubicacion:ubicacion, tiempo: tiempo, ano: ano, actividad: actividad, modalidad: modalidad, imagenp: imagenp, imagenc: imagenc, categoria: categoria, superficie:superficie},
 				  dataType: 'json'
 				});
 				window.location.href = "<?=base_url();?>admin/portfolio";

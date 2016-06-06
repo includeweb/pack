@@ -38,6 +38,11 @@ class Admin extends CI_Controller {
 		}
 
 	}
+	public function borrar_portfolio($id){
+		
+		$this->db->delete('portfolio',array('id'=>$id));
+		redirect('admin');
+	}
 
 	public function saveItem(){
 		if($_POST){
@@ -58,6 +63,29 @@ class Admin extends CI_Controller {
 
 
 				$this->db->insert('portfolio', $insert);
+			}
+	}
+	
+	public function editItem(){
+		if($_POST){
+				$id = $this->input->post('id');
+				$update['titulo'] = $this->input->post('titulo');
+				$update['subtitulo'] = $this->input->post('subtitulo');
+				$update['comentario'] = $this->input->post('comentario');
+				$update['ubicacion'] = $this->input->post('ubicacion');
+				$update['tiempo'] = $this->input->post('tiempo');
+				$update['ano'] = $this->input->post('ano');
+				$update['actividad'] = $this->input->post('actividad');
+				$update['modalidad'] = $this->input->post('modalidad');
+				$update['imagen'] = $this->input->post('imagenp');
+				$update['carousel'] = $this->input->post('imagenc');
+				$update['superficie'] = $this->input->post('superficie');
+				$update['categoria'] = $this->input->post('categoria');
+				$update['proyecto'] = $this->input->post('proyecto');
+				$update['url'] = $this->toAscii($this->input->post('titulo'));
+
+				$this->db->where('id', $id);
+				$this->db->update('portfolio', $update);
 			}
 	}
 
